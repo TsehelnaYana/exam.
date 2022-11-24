@@ -1,27 +1,17 @@
-import heapq
-from flask import Flask
+import unittest
+import app as tested_app
+import json
 
-app = Flask(__name__)
+class FlaskAppTests(unittest.TestCase):
 
-lombard = []
-#number = 0
-#item_name = ''
+    def setUp(self):
+        self.app = tested_app.app.test_client()
 
+    def test_get_hello_endpoint(self):
+        r = self.app.get('/')
+        self.assertEqual(r._status_code, 200)
+        
 
-@app.route('/')
-def add_to_lombard():
-    heapq.heappush(lombard, (1, "phone"))
-    heapq.heappush(lombard, (2, "earrings"))
-    heapq.heappush(lombard, (3, "necklace"))
-    heapq.heappush(lombard, (4, "TV"))	
-    return lombard
-    
-def print_lombard(b):
-    while b:
-        print(heapq.heappop(b))
-
-add_to_lombard()
-print_lombard(lombard)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    unittest.main()
