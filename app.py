@@ -1,5 +1,6 @@
 import datetime
 from datetime import date
+@app.route('/')
 today = datetime.datetime.now()
 bday = datetime.datetime(2023,12,16,14,45)
 time_diff = bday - today
