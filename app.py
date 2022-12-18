@@ -1,4 +1,4 @@
-import heapq
+import datetime
 from flask import Flask
 
 app = Flask(__name__)
@@ -9,19 +9,12 @@ lombard = []
 
 
 @app.route('/')
-def add_to_lombard():
-    heapq.heappush(lombard, (1, "phone"))
-    heapq.heappush(lombard, (2, "earrings"))
-    heapq.heappush(lombard, (3, "necklace"))
-    heapq.heappush(lombard, (4, "TV"))	
-    return lombard
-    
-def print_lombard(b):
-    while b:
-        print(heapq.heappop(b))
+from datetime import date
+today = datetime.datetime.now()
+bday = datetime.datetime(2023,12,16,14,45)
+time_diff = bday - today
+print(f"Your birthday is in {time_diff}")
 
-add_to_lombard()
-print_lombard(lombard)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
