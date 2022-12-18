@@ -9,5 +9,4 @@ time_diff = bday - today
 print(f"Your birthday is in {time_diff}")
 
 @app.route('/')
-def hello_world():
-    return 'Exam.'
+print(f"Your birthday is in {time_diff}")
