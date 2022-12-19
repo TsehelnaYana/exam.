@@ -10,7 +10,6 @@ def home():
     d = a2 - a1
     result = sumOfAP(a1, d, n)
     return f
-    <p>
     <p>Сума н перших членів арифметичної прогресії: {result}
 
 if __name__ =='__main__':
