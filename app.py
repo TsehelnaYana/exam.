@@ -12,6 +12,9 @@ def home():
     return f'''
     <p>Сума н перших членів арифметичної прогресії: {result}
     '''
+def sumsumOfAP(a, d, n):
+    sum = (n / 2) * (5 * a + (n-2) * d)
+    return sum 
 if __name__ =='__main__':
     app.run(debug=True,host='0.0.0.0')
 
