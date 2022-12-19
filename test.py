@@ -11,6 +11,7 @@ class FlaskAppTests(unittest.TestCase):
 	    self.assertEqual(r.data, 157)
 	    self.assertIsNotNone(r.data)
 	    self.assertGreater(r.data, 0)
+	    self.assertEqual(app.sumOfAP(2,4,5),10)
 
 if __name__ =='__main__':
 	unittest.main()
