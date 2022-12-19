@@ -1,20 +1,19 @@
-import datetime
-from datetime import date
 from flask import Flask
-
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-    n = 5
-    x = 2
-    for i in range(n):
-        x = x+x+3
-    return x
+@app.route('/home')
+def home():
+    n = 3
+    a1 = 2
+    a2 = 5
+    d = a2 - a1
+    result = sumOfAP(a1, d, n)
+    return f
+    <p>
+    <p>Сума н перших членів арифметичної прогресії: {result}
 
-
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
-
+if __name__ =='__main__':
+    app.run(debug=True,host='0.0.0.0')
 
 
